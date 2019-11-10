@@ -3,9 +3,8 @@ export CUDA_VISIBLE_DEVICES="0"
 export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese_L-12_H-768_A-12
 export GLUE_DIR=../../glue/chineseGLUEdatasets
 
-# for eval and test
-export MYDIR=/N/dc2/projects/NLI/cnli_output_20191109
 
+##### train
 #python run_classifier.py \
 #  --task_name=cnli \
 #  --do_train=true \
@@ -21,6 +20,9 @@ export MYDIR=/N/dc2/projects/NLI/cnli_output_20191109
 #  --learning_rate=3e-5 \
 #  --num_train_epochs=2.0 \
 #  --output_dir=$MYDIR
+
+##### for eval and test
+export MYDIR=/N/dc2/projects/NLI/cnli_output_20191109
 
 python run_classifier.py \
   --task_name=cnli \

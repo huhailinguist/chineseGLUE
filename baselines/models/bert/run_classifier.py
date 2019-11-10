@@ -1434,9 +1434,9 @@ def main(_):
                 steps_and_files.append([global_step, cur_filename])
         steps_and_files = sorted(steps_and_files, key=lambda x: x[0])
 
-        output_eval_file = os.path.join(FLAGS.data_dir, "dev_results_bert.txt")
+        output_eval_file = os.path.join(FLAGS.output_dir, "dev_results_bert.txt")
         print("output_eval_file:", output_eval_file)
-        tf.logging.info("output_eval_file:" + output_eval_file)
+        tf.logging.info("output_eval_file: " + output_eval_file)
         with tf.gfile.GFile(output_eval_file, "w") as writer:
             for global_step, filename in sorted(steps_and_files, key=lambda x: x[0]):
                 result = estimator.evaluate(input_fn=eval_input_fn, steps=eval_steps, checkpoint_path=filename)
@@ -1507,7 +1507,7 @@ def main(_):
                 steps_and_files.append([global_step, cur_filename])
         steps_and_files = sorted(steps_and_files, key=lambda x: x[0])
 
-        output_eval_file = os.path.join(FLAGS.data_dir, "test_results_bert.txt")
+        output_eval_file = os.path.join(FLAGS.output_dir, "test_results_bert.txt")
         print("output_eval_file:", output_eval_file)
         tf.logging.info("output_eval_file:" + output_eval_file)
         with tf.gfile.GFile(output_eval_file, "w") as writer:
