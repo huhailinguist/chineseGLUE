@@ -7,6 +7,7 @@ python run_classifier.py \
   --task_name=xnli \
   --do_train=true \
   --do_eval=true \
+  --do_predict=true \
   --data_dir=$GLUE_DIR/xnli \
   --vocab_file=$BERT_BASE_DIR/vocab.txt \
   --bert_config_file=$BERT_BASE_DIR/bert_config.json \
@@ -16,4 +17,4 @@ python run_classifier.py \
   --eval_batch_size=64 \
   --learning_rate=3e-5 \
   --num_train_epochs=2.0 \
-  --output_dir=$CURRENT_DIR/xnli_output/
+  --output_dir=$CURRENT_DIR/xnli_output_20191109/
